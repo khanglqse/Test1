@@ -58,11 +58,8 @@ export const PAGES_MENU = [
           menu: {
             title: 'Maps',
             icon: 'ion-gear-a',
-<<<<<<< HEAD
-            order: 260
-=======
-            order: 253
->>>>>>> 5785612b1e62b34421aa7c89e68aeab9b25219e2
+
+            order: 254
           }
         }
       },
