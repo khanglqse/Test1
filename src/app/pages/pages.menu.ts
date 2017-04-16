@@ -58,7 +58,7 @@ export const PAGES_MENU = [
           menu: {
             title: 'Maps',
             icon: 'ion-gear-a',
-            order: 253
+            order: 255
           }
         }
       },
