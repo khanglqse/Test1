@@ -1,0 +1,10 @@
+{
+    "student_id": "ThaoNTT",
+    "fullname": "Nguyễn Thị Thu Thảo",
+    "dob": "1998-01-01",
+    "address": "address",
+    "phone": "(+84)1234567899",
+    "email": "abc@xyz.com",
+    "gender": "femail",
+    "is_banned": false
+}

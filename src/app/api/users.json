@@ -1,0 +1,15 @@
+[{
+        "id": 1,
+        "username": "Bret",
+        "phone": "1231231241251",
+        "email": "Sincere@april.biz",
+        "isBanned": false
+    },
+    {
+        "id": 2,
+        "username": "Antonette",
+        "phone": "15211134213",
+        "email": "Shanna@melissa.tv",
+        "isBanned": true
+    }
+]

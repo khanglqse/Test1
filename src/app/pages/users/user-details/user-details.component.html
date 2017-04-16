@@ -1,0 +1,83 @@
+<ba-card title="View Profile" baCardClass="with-scroll">
+
+
+
+
+
+
+    <div class="container" *ngIf="userInfo">
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="assets/img/100.png" class="avatar img-circle" alt="avatar">
+                    <h6>{{userInfo.LastName}} {{userInfo.MiddleName}} {{userInfo.FirstName}}</h6>
+                </div>
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+
+                <h3>Personal info</h3>
+
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Gender:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.Gender}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Student Id:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.student_id}}2251</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Birthday:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.Birthday}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Phone:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.Phone}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Address:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.Address}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{userInfo.Email}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label">Status:</label>
+                        <div class="col-lg-8">
+                            <span class="form-control">{{ (userInfo.IsDeleted) ? "Blocked" : "Activated"}}</span>
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+</ba-card>

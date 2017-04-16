@@ -1,0 +1,14 @@
+{
+    "houses": {
+        "search": "app/api/houses.json"
+    },
+    "login": {
+        "process": "app/api/login.json"
+    },
+    "transaction": {
+        "search": "app/api/transaction.json"
+    },
+    "user": {
+        "search": "app/api/users.json"
+    }
+}

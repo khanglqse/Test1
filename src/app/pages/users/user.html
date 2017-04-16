@@ -1,0 +1,131 @@
+<style>
+    /* === tabs === */
+    
+    .tabcontent {
+        display: none;
+    }
+    
+    .nav-tabs .nav-item {
+        width: 15%;
+        text-align: center;
+        cursor: cell;
+    }
+    
+    thead {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    tbody>tr>td {
+        cursor: pointer;
+    }
+</style>
+
+<div class="widgets">
+
+    <div class="row">
+        <ba-card title="User Manage" baCardClass="with-scroll">
+            <!-- Search -->
+            <div class="input-group">
+                <input class="form-control" placeholder="Search for..." type="text">
+                <span class="input-group-btn">
+                <button class="btn btn-success" type="button">Go!</button>
+            </span>
+            </div>
+            <!-- /Search -->
+
+
+            <!-- Tabs -->
+            <div class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" (click)="openCity($event, 'All')">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="openCity($event, 'Actived')">Activated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="openCity($event, 'Banned')">Blocked</a>
+                </li>
+            </div>
+
+            <div id="All" class="tabcontent" style="display: block;">
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="black-muted-bg">
+                            <th >User Name</th>
+                            <th >Phone Number</th>
+                            <th >Email</th>
+                            <th >Rooms</th>
+                            <!--<th >Status</th>-->
+                            <th >Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let item of data">
+                            <td  (click)="viewUserDetails(item.UserId)">
+                                {{item.LastName | uppercase}} {{item.MiddleName | uppercase}} {{item.FirstName | uppercase}}
+                                </td>
+                            <td  (click)="viewUserDetails(item.UserId)">{{item.Phone}}</td>
+                            <td  (click)="viewUserDetails(item.UserId)">{{item.Email}}</td>
+                            <td>{{item.TotalRoom}}</td>
+                            <!--<td>{{(item.isDeleted)?" <button class="btn-xs btn-success">Activated</button>":  <button class="btn-xs btn-success">Block</button>"}}-->
+                            <!--</td>
+                            <td></td>-->
+                            <td >
+                                <button (click)="banUser($event, item)" class="{status-button btn btn-xs btn-danger">
+                                    {{(item.isBanned)?"Un block":"Block"}}
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="Actived" class="tabcontent">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="align-right">username</th>
+                            <th class="align-right">phone</th>
+                            <th class="align-right">email</th>
+                            <th class="align-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        Comming soon !
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="Banned" class="tabcontent">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="align-right">username</th>
+                            <th class="align-right">phone</th>
+                            <th class="align-right">email</th>
+                            <th class="align-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        Comming soon !
+
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- /Tabs -->
+
+
+        </ba-card>
+    </div>
+
+</div>

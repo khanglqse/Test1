@@ -1,0 +1,41 @@
+<div class="widgets">
+
+    <div class="row">
+        <ba-card title="Houses Manage" baCardClass="with-scroll">
+
+            <!-- Search -->
+            <div class="input-group">
+                <input class="form-control" placeholder="Search for..." type="text">
+                <span class="input-group-btn">
+                <button class="btn btn-success" type="button">Go!</button>
+            </span>
+            </div>
+            <!-- /Search -->
+
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="black-muted-bg">
+                        <th class="align-right">Title</th>
+                        <th class="align-right">Country</th>
+                        <th class="align-right">House Type</th>
+                        <th class="align-right">Address</th>
+                        <th class="align-right">Visited</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td class="align-right">{{item.Title}}</td>
+                        <td class="align-right">{{item.CountryId}}</td>
+                        <td class="align-right">{{item.HouseType}}</td>
+                        <td class="align-right">{{item.Address}}</td>
+                        <td class="align-right">{{item.visited_count}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </ba-card>
+    </div>
+
+</div>

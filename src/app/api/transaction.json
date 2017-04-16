@@ -1,0 +1,9 @@
+[{
+    "room_name": "Room 1",
+    "guest_name": "Luong Quang Khang",
+    "host_name": "Luong Quang Khang",
+    "status": "booked",
+    "book_id": 1,
+    "payment_method": "ebanking",
+    "price": 50.5
+}]
