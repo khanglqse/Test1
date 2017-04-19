@@ -6,18 +6,19 @@ export class Config {
 
     protected URLs = {
         "houses": {
-            "search": "http://localhost:41528/api/houses"
+            "search": "http://localhost:3000/app/api/houses.json"
         },
         "login": {
-            "process": "app/api/login.json"
+            "process": "http://localhost:3000/app/api/login.json"
         },
         "transaction": {
-            "search": "app/api/transaction.json"
+            "search": "http://localhost:3000/app/api/transaction.json",
+            "get": "http://localhost:3000/app/api/transaction-details.json"
         },
         "user": {
-            "search": "http://localhost:41528/api/UserApi",
-            "ban": "http://localhost:41528/api/UserApi/ban/{id}",
-            "get": "http://localhost:41528/api/UserApi/{id}"
+            "search": "http://localhost:3000/app/api/user.json",
+            "ban": "http://localhost:3000/app/api/user-ban.json",
+            "get": "http://localhost:3000/app/api/user-details.json"
         },
         "map": {
             "search": "http://localhost:3000/app/api/geojson.json",

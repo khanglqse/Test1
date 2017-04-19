@@ -18,12 +18,13 @@ export const routes: Routes = [
     path: 'pages',
     component: Pages,
     children: [
-      { path: '', redirectTo: 'users', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule' },
       { path: 'users', loadChildren: 'app/pages/users/user.module#UserModule' },
-      { path: 'users/:id', loadChildren: 'app/pages/users/user-details/user-details.module#UserDetailModule' },
+      { path: 'users/:userId', loadChildren: 'app/pages/users/user-details/user-details.module#UserDetailModule' },
       { path: 'houses', loadChildren: 'app/pages/houses/houses.module#HousesModule' },
       { path: 'trans', loadChildren: 'app/pages/transaction/transaction.module#TransactionModule' },
+      { path: 'trans/:tranId', loadChildren: 'app/pages/transaction/transaction-details/transaction-details.module#TransactionDetailsModule' },
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
 
     ]
