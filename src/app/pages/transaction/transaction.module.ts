@@ -3,7 +3,7 @@ import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { ModalModule } from 'ng2-bootstrap';
-
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { routing }       from './transaction.routing';
 import { TransactionComponent } from './transaction.component';
 
@@ -14,7 +14,8 @@ import { TransactionComponent } from './transaction.component';
     CommonModule,
     FormsModule,
     NgaModule,
-    routing
+    routing,
+    Ng2SmartTableModule
   ],
   declarations: [
     TransactionComponent,    
