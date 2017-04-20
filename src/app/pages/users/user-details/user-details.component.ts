@@ -17,7 +17,7 @@ export class UserDetailComponent implements OnInit {
         protected activeRoute: ActivatedRoute) {
         //alert(this.activeRoute.snapshot.params['id']);
 
-        let id = this.activeRoute.snapshot.params['id'];
+        let id = this.activeRoute.snapshot.params['userId'];
         this.service.getDetails(id)
             .then((ret: Response) => {
                 this.userInfo = ret.json();

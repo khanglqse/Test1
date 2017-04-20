@@ -1,0 +1,20 @@
+{
+    "trans_id": 101,
+    "guest_name": "Luong Quang Khang",
+    "guest_address": "1111 Army Navy Drive, L.A, US",
+    "guest_phone": "01234567899",
+    "guest_email": "abc@xyz.com",
+    "host_name": "Luong Quang Khang",
+    "host_address": "123 xyz, Q.1, HCMC, VN",
+    "host_phone": "01234567100",
+    "host_email": "host@xyz.com",
+    "status": "booked",
+    "book_id": 1,
+    "room_name": "Room 1",
+    "payment_method": "ebanking",
+    "price": 50.5,
+    "currency": "USD",
+    "arrival_date": "18/4/2017",
+    "departure_date": "19/4/2017",
+    "is_approved": false
+}
