@@ -14,13 +14,13 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let item of data" (click)="viewTransDetails(item.trans_id)">
-                <td class="align-right">{{item.book_id}}</td>
-                <td class="align-right">{{item.room_name}}</td>
-                <td class="align-right">{{item.guest_name}}</td>
-                <td class="align-right">{{item.host_name}}</td>
-                <td class="align-right">{{item.status}}</td>
-                <td class="align-right">{{item.payment_method}}</td>
+            <tr *ngFor="let item of data">
+                <td class="align-right">{{item.Id}}</td>
+                <td class="align-right">{{item.RoomName}}</td>
+                <td class="align-right">{{item.GuestName}}</td>
+                <td class="align-right">{{item.HostName}}</td>
+                <td class="align-right">{{item.Status}}</td>
+                <td class="align-right">{{item.PaymentMethod}}</td>
                 <td class="align-right">{{item.price}}</td>
             </tr>
 

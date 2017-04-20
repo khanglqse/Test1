@@ -10,7 +10,7 @@ export const PAGES_MENU = [
             icon: 'ion-android-home',
             selected: false,
             expanded: false,
-            order: 0
+            order: 1,
           }
         }
       },
@@ -47,6 +47,8 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Transactions',
+            selected: false,
+            expanded: false,
             icon: 'ion-gear-a',
             order: 252
           }
@@ -58,7 +60,8 @@ export const PAGES_MENU = [
           menu: {
             title: 'Maps',
             icon: 'ion-gear-a',
-
+            selected: false,
+            expanded:false,
             order: 254
           }
         }

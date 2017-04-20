@@ -12,8 +12,7 @@ export class Config {
             "process": "http://localhost:3000/app/api/login.json"
         },
         "transaction": {
-            "search": "http://localhost:3000/app/api/transaction.json",
-            "get": "http://localhost:3000/app/api/transaction-details.json"
+            "search": "app/api/transaction.json"
         },
         "user": {
             "search": "http://localhost:3000/app/api/user.json",
