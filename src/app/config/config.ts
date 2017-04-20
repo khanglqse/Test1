@@ -12,7 +12,7 @@ export class Config {
             "process": "app/api/login.json"
         },
         "transaction": {
-            "search": "app/api/transaction.json"
+            "search": "http://localhost:41528/api/booking"
         },
         "user": {
             "search": "http://localhost:41528/api/UserApi",
