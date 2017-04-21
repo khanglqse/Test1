@@ -7,6 +7,11 @@ import { ModalModule } from 'ng2-bootstrap';
 import { routing } from './user-details.routing';
 import { UserDetailComponent } from './user-details.component';
 
+import { TabsModule } from 'ng2-bootstrap';
+
+import { ChatHistoriesComponent } from './chat-histories/chat-histories.component';
+import {TransComponent} from './trans/trans.component';
+
 
 @NgModule({
     imports: [
@@ -14,9 +19,14 @@ import { UserDetailComponent } from './user-details.component';
         FormsModule,
         NgaModule,
         ModalModule.forRoot(),
+        TabsModule.forRoot(),
         routing
     ],
-    declarations: [UserDetailComponent],
+    declarations: [
+        UserDetailComponent, 
+        ChatHistoriesComponent,
+        TransComponent
+        ],
     providers: [],
 })
 export class UserDetailModule { }

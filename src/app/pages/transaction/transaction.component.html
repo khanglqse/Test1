@@ -14,16 +14,18 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let item of data">
-                <td class="align-right">{{item.Id}}</td>
-                <td class="align-right">{{item.RoomName}}</td>
-                <td class="align-right">{{item.GuestName}}</td>
-                <td class="align-right">{{item.HostName}}</td>
-                <td class="align-right">{{item.Status}}</td>
-                <td class="align-right">{{item.PaymentMethod}}</td>
+
+            <tr *ngFor="let item of tranList">
+                <td class="align-right">{{item.trans_id}}</td>
+                <td class="align-right">{{item.room_name}}</td>
+                <td class="align-right">{{item.guest_name}}</td>
+                <td class="align-right">{{item.host_name}}</td>
+                <td class="align-right">{{item.status}}</td>
+                <td class="align-right">{{item.payment_method}}</td>
                 <td class="align-right">{{item.price}}</td>
             </tr>
 
         </tbody>
     </table>
+
 </ba-card>

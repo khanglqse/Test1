@@ -229,15 +229,17 @@
         height: 30px;
     }
     
-    .minimaze .messages {
+    .chat_window.minimaze .messages {
         height: 0;
         opacity: 0;
+        display: none;
     }
     
-    .minimaze .bottom_wrapper {
+    .chat_window.minimaze .bottom_wrapper {
         padding: 0;
         height: 0px;
         opacity: 0;
+        display: none;
     }
 </style>
 
@@ -245,7 +247,7 @@
     <div class="top_menu">
         <div class="buttons">
             <div class="button close"></div>
-            <div class="button minimize" onclick="minimaze()"></div>
+            <div class="button minimize" (click)="minimaze()"></div>
             <div class="button maximize"></div>
         </div>
         <div class="title">Chat</div>
@@ -273,9 +275,9 @@
 
     <div class="bottom_wrapper clearfix">
         <div class="message_input_wrapper">
-            <input id="message_input" class="message_input" placeholder="Type your message here..." onkeypress="submitMessage(event)" autofocus="autofocus" />
+            <input id="message_input" class="message_input" (keypress)="submitMessage($event)" autofocus="autofocus" placeholder="Type your message here..." />
         </div>
-        <div class="send_message" onclick="sendMessage()">
+        <div class="send_message" (click)="sendMessage()">
             <div class="icon"></div>
             <div class="text">Send</div>
         </div>
@@ -290,63 +292,3 @@
         </div>
     </li>
 </div>
-
-
-<script>
-    function submitMessage(e) {
-
-        if (e.keyCode == 13) {
-            sendMessage();
-        }
-    }
-
-    function sendMessage() {
-
-        var message = document.getElementById("message_input");
-
-        if (message == null || message.value == '')
-            return false;
-
-        var template = document.getElementById("message_template");
-        var list_message = document.getElementById("messages");
-
-        // create template
-        var message_object = document.createElement('li');
-        message_object.className = "message appeared right";
-
-        var avatar = document.createElement('div');
-        avatar.className = "avatar";
-        avatar.style.backgroundImage = "url(avatar.jpg)";
-        avatar.style.backgroundSize = "100% 100%";
-
-        var text_wrapper = document.createElement('div');
-        text_wrapper.className = "text_wrapper";
-
-        var text = document.createElement('div');
-        text.className = "text";
-        text.innerText = message.value;
-        message.value = '';
-
-        // make nodelist
-        text_wrapper.appendChild(text);
-        message_object.appendChild(avatar);
-        message_object.appendChild(text_wrapper);
-
-        // insert to list chat
-        list_message.appendChild(message_object);
-
-        // scroll to bottom of the list
-        list_message.scrollTop = list_message.scrollHeight;
-
-
-    }
-
-    function minimaze() {
-        var chat_window = document.getElementById("chat_window");
-
-        if (chat_window.className.includes("minimaze"))
-            chat_window.className = "chat_window";
-        else
-            chat_window.className = "chat_window minimaze";
-    }
-</script>

@@ -1,0 +1,47 @@
+ .main_section {
+     border: 2px dotted white;
+     border-radius: 9px;
+     padding: 10px 0px;
+     font-size: 10px;
+ }
+ 
+ .chat-img img {
+     height: 34px;
+     width: 34px;
+ }
+ 
+ .chat_area li .chat-img1 img {
+     height: 40px;
+     width: 40px;
+ }
+ 
+ .chat-body1 p {
+     background: #0005;
+     padding: 4px;
+     border-radius: 5px;
+     margin-bottom: 0;
+ }
+ 
+ .chat-body1 {
+     margin-bottom: 5px;
+     width: calc(80% - 50px);
+ }
+ 
+ .chat_area .chat-body1 {
+     margin-left: 50px;
+ }
+ 
+ .pull-right .img-circle {
+     margin-left: 8px;
+ }
+ 
+ .message_section {
+     border-left: 1px dotted white;
+ }
+ 
+ .chat-body {
+     background: #0005;
+     border-radius: 5px;
+     padding: 5px;
+     margin-bottom: 5px;
+ }

@@ -3,6 +3,7 @@
         "username": "Bret",
         "phone": "1231231241251",
         "email": "Sincere@april.biz",
+        "totalRoom": 20,
         "isBanned": false
     },
     {
@@ -10,6 +11,7 @@
         "username": "Antonette",
         "phone": "15211134213",
         "email": "Shanna@melissa.tv",
+        "totalRoom": 1,
         "isBanned": true
     }
 ]

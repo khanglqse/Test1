@@ -19,4 +19,8 @@ export class UserDetailService extends CommonService {
             .toPromise();
     }
 
+    public getTrans(id): Promise<any> {
+        return this.http.get(this.URLs.user.trans + "?id="+id)
+        .toPromise();
+    }
 }

@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 
 export class TransactionComponent {
 
-    public data = [];
+    public tranList = [];
 
     constructor(protected service: TransactionService,
         protected router: Router) {
 
         this.service.getData().then((data) => {
-            this.data = data;
+            this.tranList = data;
         });
     }
 

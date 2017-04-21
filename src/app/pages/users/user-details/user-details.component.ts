@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Http, Response } from '@angular/http';
 
@@ -7,11 +7,17 @@ import { UserDetailService } from './user-details.service';
 @Component({
     selector: 'user-details',
     templateUrl: 'user-details.component.html',
+    styleUrls: ['./user-details.css'],
     providers: [UserDetailService]
 })
 
-export class UserDetailComponent implements OnInit {
+export class UserDetailComponent {
+
+    //@ViewChild('staticTabs') staticTabs: TabsetComponent;
     public userInfo = {};
+
+    public tranList = {};
+    
 
     constructor(private service: UserDetailService,
         protected activeRoute: ActivatedRoute) {
@@ -22,12 +28,16 @@ export class UserDetailComponent implements OnInit {
             .then((ret: Response) => {
                 this.userInfo = ret.json();
             });
-
+        
+        this.service.getTrans(id)
+        .then( (ret: Response) => {
+            this.tranList = ret.json();
+        });
     }
 
-
-
-    ngOnInit() { }
-
-
+    public updateList(list){
+        
+        list = this.tranList;
+    }
+    
 }

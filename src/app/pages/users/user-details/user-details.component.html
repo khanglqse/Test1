@@ -1,10 +1,5 @@
 <ba-card title="View Profile" baCardClass="with-scroll">
 
-
-
-
-
-
     <div class="container" *ngIf="userInfo">
 
         <div class="row">
@@ -16,65 +11,79 @@
                 </div>
             </div>
 
+
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
 
-                <h3>Personal info</h3>
+                <tabset type="pills">
+                    <tab heading="Personal info">
 
-                <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form">
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Gender:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.Gender}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Gender:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.Gender}}</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Student Id:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.student_id}}2251</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Student Id:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.student_id}}2251</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Birthday:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.Birthday}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Birthday:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.Birthday}}</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Phone:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.Phone}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Phone:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.Phone}}</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Address:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.Address}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Address:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.Address}}</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Email:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{userInfo.Email}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Email:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{userInfo.Email}}</span>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label class="col-lg-3 control-label">Status:</label>
-                        <div class="col-lg-8">
-                            <span class="form-control">{{ (userInfo.IsDeleted) ? "Blocked" : "Activated"}}</span>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label">Status:</label>
+                                <div class="col-lg-8">
+                                    <span class="form-control">{{ (userInfo.IsDeleted) ? "Blocked" : "Activated"}}</span>
+                                </div>
+                            </div>
 
 
 
-                </form>
+                        </form>
+                    </tab>
+                    <tab heading="Chat histories">
+                        <chat-histories></chat-histories>
+                    </tab>
+
+                    <tab heading="Transactions">
+                        <trans (updateList)="updateList($event)"></trans>
+                    </tab>
+
+                </tabset>
+
+
             </div>
         </div>
     </div>

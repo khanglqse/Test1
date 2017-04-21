@@ -53,27 +53,28 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="black-muted-bg">
-                            <th >User Name</th>
-                            <th >Phone Number</th>
-                            <th >Email</th>
-                            <th >Rooms</th>
+                            <th>User Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Rooms</th>
                             <!--<th >Status</th>-->
-                            <th >Actions</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
 
+
                         <tr *ngFor="let item of data">
-                            <td  (click)="viewUserDetails(item.UserId)">
-                                {{item.LastName | uppercase}} {{item.MiddleName | uppercase}} {{item.FirstName | uppercase}}
-                                </td>
-                            <td  (click)="viewUserDetails(item.UserId)">{{item.Phone}}</td>
-                            <td  (click)="viewUserDetails(item.UserId)">{{item.Email}}</td>
-                            <td>{{item.TotalRoom}}</td>
+                            <td (click)="viewUserDetails(item.id)">
+                                {{item.username}}
+                            </td>
+                            <td (click)="viewUserDetails(item.id)">{{item.phone}}</td>
+                            <td (click)="viewUserDetails(item.id)">{{item.email}}</td>
+                            <td>{{item.totalRoom}}</td>
                             <!--<td>{{(item.isDeleted)?" <button class="btn-xs btn-success">Activated</button>":  <button class="btn-xs btn-success">Block</button>"}}-->
                             <!--</td>
                             <td></td>-->
-                            <td >
+                            <td>
                                 <button (click)="banUser($event, item)" class="{status-button btn btn-xs btn-danger">
                                     {{(item.isBanned)?"Un block":"Block"}}
                                 </button>

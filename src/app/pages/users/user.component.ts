@@ -42,7 +42,7 @@ export class UserComponent {
     }
 
     public viewUserDetails(id) {
-        this.router.navigate(['/pages/users', id]);
+        this.router.navigate(['pages/users', id]);
     }
 
 
