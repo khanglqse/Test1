@@ -16,7 +16,7 @@ export class UserDetailComponent {
     //@ViewChild('staticTabs') staticTabs: TabsetComponent;
     public userInfo = {};
 
-    public tranList = {};
+    public tranList = [];//[{"trans_id":101,"room_name":"Room 1","guest_name":"Luong Quang Khang","host_name":"Luong Quang Khang","status":"booked","book_id":1,"payment_method":"ebanking","price":50.5}];
     
 
     constructor(private service: UserDetailService,
@@ -33,11 +33,6 @@ export class UserDetailComponent {
         .then( (ret: Response) => {
             this.tranList = ret.json();
         });
-    }
-
-    public updateList(list){
-        
-        list = this.tranList;
     }
     
 }

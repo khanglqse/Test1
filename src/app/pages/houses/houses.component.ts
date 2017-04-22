@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 import { HousesService } from './houses.service';
 
@@ -15,11 +16,17 @@ export class HousesComponent {
 
     data = [];
 
-    constructor(protected service: HousesService) {
+    constructor(
+        private router: Router,
+        protected service: HousesService) {
 
         this.service.getData().then((data) => {
             this.data = data;
         });
+    }
+
+    public viewDetails(id) {
+        this.router.navigate(["/pages/houses", id]);
     }
 
 }

@@ -10,13 +10,5 @@ export class TransComponent {
     @Input()
     public tranList = {};
 
-    @Output() 
-    updateList = new EventEmitter();
-
-
-    constructor() { 
-
-        this.updateList.emit(this.tranList);
-    }
 
 }
