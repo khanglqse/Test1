@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 
 import { UserService } from './user.service';
 
+// for sweetalert2
+declare var swal: any;
+
 @Component({
     selector: 'user',
     templateUrl: './user.html',
@@ -16,9 +19,10 @@ export class UserComponent {
     data = [];
 
     constructor(protected service: UserService, protected router: Router) {
-
         this.loadData();
     }
+
+    
 
     public loadData() {
         this.service.getData().then((data) => {
@@ -27,17 +31,36 @@ export class UserComponent {
     }
 
     public banUser(event, item): void {
+        
         let message = (item.isBanned) ? "unblock" : "block";
 
-        if (window.confirm('Are you sure you want to ' + message + ' "' + item.FirstName +  '"?')) {
+        swal({
+            title: 'Are you sure?',
+            text: 'Are you sure you want to ' + message + ' "' + item.FirstName + '"?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Block!',
+            cancelButtonText: 'No, keep'
+        }).then(function() {
 
             this.service.setBan(item.id);
             this.loadData();
 
-            event.confirm.resolve();
-        } else {
-            event.confirm.reject();
-        }
+            swal(
+            'Deleted!',
+            'you take a ban action!',
+            'success'
+            )
+        }, function(dismiss) {
+            // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
+            if (dismiss === 'cancel') {
+                swal(
+                'Cancelled',
+                'you cancelled this ban action!',
+                'error'
+                )
+            }
+        })
 
     }
 

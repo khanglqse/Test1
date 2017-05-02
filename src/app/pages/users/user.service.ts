@@ -25,7 +25,7 @@ export class UserService extends CommonService {
     }
 
     public setBan(id) {
-        this.http.delete(this.URLs.user.ban + "/" + id);
+        this.http.delete(this.URLs.user.ban + "?id=" + id);
     }
 
 }
