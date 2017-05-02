@@ -27,6 +27,7 @@ export const routes: Routes = [
       { path: 'trans', loadChildren: 'app/pages/transaction/transaction.module#TransactionModule' },
       { path: 'trans/:tranId', loadChildren: 'app/pages/transaction/transaction-details/transaction-details.module#TransactionDetailsModule' },
       { path: 'maps', loadChildren: 'app/pages/maps/maps.module#MapsModule' },
+      { path: 'rooms', loadChildren: 'app/pages/rooms/rooms.module#RoomsModule' }
 
     ]
   }

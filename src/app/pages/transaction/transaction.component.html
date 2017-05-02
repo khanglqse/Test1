@@ -7,6 +7,8 @@
                 <th class="align-right">Room Name</th>
                 <th class="align-right">Guest Name</th>
                 <th class="align-right">Host Name</th>
+                <th class="align-right">Country</th>
+                <th class="align-right">City</th>
                 <th class="align-right">Payment Method</th>
                 <th class="align-right">Price</th>
                 <th class="align-right">Status</th>
@@ -15,14 +17,16 @@
         <tbody>
 
 
-            <tr *ngFor="let item of tranList">
+            <tr *ngFor="let item of tranList" (click)="viewTransDetails(item.trans_id)" style="cursor: pointer;">
                 <td class="align-right">{{item.trans_id}}</td>
                 <td class="align-right">{{item.room_name}}</td>
                 <td class="align-right">{{item.guest_name}}</td>
                 <td class="align-right">{{item.host_name}}</td>
-                <td class="align-right">{{item.status}}</td>
+                <td class="align-right">{{item.country}}</td>
+                <td class="align-right">{{item.city}}</td>
                 <td class="align-right">{{item.payment_method}}</td>
                 <td class="align-right">{{item.price}}</td>
+                <td class="align-right">{{item.status}}</td>
             </tr>
 
         </tbody>

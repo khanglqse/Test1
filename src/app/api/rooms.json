@@ -1,0 +1,17 @@
+[{
+        "house_id": "1",
+        "room_name": "101",
+        "room_type": "Contry room",
+        "price": "5",
+        "location": "District 1",
+        "country": "Viet Nam"
+    },
+    {
+        "house_id": "2",
+        "room_name": "abacs1",
+        "room_type": "Contry room",
+        "price": "12",
+        "location": "District 12",
+        "country": "Viet Nam"
+    }
+]

@@ -6,7 +6,8 @@ export class Config {
 
     protected URLs = {
         "houses": {
-            "search": "http://localhost:3000/app/api/houses.json"
+            "search": "http://localhost:3000/app/api/houses.json",
+            "get": "app/api/house-details.json"
         },
         "login": {
             "process": "http://localhost:3000/app/api/login.json"
@@ -19,12 +20,17 @@ export class Config {
             "search": "http://localhost:3000/app/api/users.json",
             "ban": "http://localhost:3000/app/api/user-ban.json",
             "get": "http://localhost:3000/app/api/user-details.json",
-            "trans": "http://localhost:3000/app/api/transaction.json"
+            "trans": "http://localhost:3000/app/api/transaction.json",
+            "userHouses": "http://localhost:3000/app/api/userHouses.json"
+            
         },
         "map": {
             "search": "http://localhost:3000/app/api/geojson.json",
             "icon": "http://localhost:3000/assets/img/theme/vendor/leaflet/home.png",
             "defaultIcon": "assets/img/theme/vendor/leaflet"
+        },
+        "rooms":{
+            "search": "http://localhost:3000/app/api/rooms.json"
         }
     };
 

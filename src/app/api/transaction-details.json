@@ -11,6 +11,8 @@
     "status": "booked",
     "book_id": 1,
     "room_name": "Room 1",
+    "room_type": "Country house",
+    "room_address": "123 abc, TCH, Disctric 12, HCMC, Vietnam",
     "payment_method": "ebanking",
     "price": 50.5,
     "currency": "USD",

@@ -42,6 +42,20 @@ export const PAGES_MENU = [
         }
       },
 
+      
+      {
+        path: 'rooms',
+        data: {
+          menu: {
+            title: 'Rooms',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 251,
+          }
+        }
+      },
+
       {
         path: 'trans',
         data: {

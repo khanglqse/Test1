@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of data" (click)="viewDetails(item.id)">
+                    <tr *ngFor="let item of data" (click)="viewDetails(item.id)" style="cursor: pointer;">
                         <td class="align-right">{{item.id}}</td>
                         <td class="align-right">{{item.host_id}}</td>
                         <td class="align-right">{{item.house_type}}</td>

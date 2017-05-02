@@ -2,12 +2,11 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ModalModule } from 'ng2-bootstrap';
-import { TabsModule } from 'ng2-bootstrap';
 
-import { routing }       from './user.routing';
-import { UserComponent } from './user.component';
+import { routing }       from './rooms.routing';
+import { RoomsComponent } from './rooms.component';
+
 
 
 @NgModule({
@@ -15,14 +14,10 @@ import { UserComponent } from './user.component';
     CommonModule,
     FormsModule,
     NgaModule,
-    Ng2SmartTableModule,
-    TabsModule.forRoot(),
-    ModalModule.forRoot(),
     routing
   ],
   declarations: [
-    UserComponent,    
+    RoomsComponent,    
   ]
 })
-
-export class UserModule { }
+export class RoomsModule { }

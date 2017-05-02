@@ -1,6 +1,7 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Http, Response } from '@angular/http';
+import { Router } from "@angular/router";
 
 import { UserDetailService } from './user-details.service';
 
@@ -13,26 +14,38 @@ import { UserDetailService } from './user-details.service';
 
 export class UserDetailComponent {
 
-    //@ViewChild('staticTabs') staticTabs: TabsetComponent;
     public userInfo = {};
 
-    public tranList = [];//[{"trans_id":101,"room_name":"Room 1","guest_name":"Luong Quang Khang","host_name":"Luong Quang Khang","status":"booked","book_id":1,"payment_method":"ebanking","price":50.5}];
-    
+    public tranList = [];
+    public houseInfo = [];
 
-    constructor(private service: UserDetailService,
+    constructor(
+        private router: Router,
+        private service: UserDetailService,
         protected activeRoute: ActivatedRoute) {
         //alert(this.activeRoute.snapshot.params['id']);
 
         let id = this.activeRoute.snapshot.params['userId'];
         this.service.getDetails(id)
-            .then((ret: Response) => {
-                this.userInfo = ret.json();
+            .then((ret) => {
+                this.userInfo = ret;
             });
         
         this.service.getTrans(id)
-        .then( (ret: Response) => {
-            this.tranList = ret.json();
+        .then( (ret) => {
+            this.tranList = ret;
+        });
+
+        this.service.getHouseData()
+        .then((ret)=>{
+            this.houseInfo = ret;
         });
     }
+
+    public viewDetails(id) {
+        this.router.navigate(["/pages/houses", id]);
+    }
+
+
     
 }

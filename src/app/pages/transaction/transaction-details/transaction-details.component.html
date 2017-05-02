@@ -55,6 +55,16 @@
                 </div>
             </div>
         </div>
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group row">
+                <label class="col-lg-3 control-label">Room Address:</label>
+                <div class="col-lg-8">
+                    <span class="form-control">{{transInfo.room_address}}</span>
+                </div>
+            </div>
+        </form>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -67,6 +77,7 @@
                                 <thead>
                                     <tr>
                                         <td class="text-center"><strong>Room Name</strong></td>
+                                        <td class="text-center"><strong>Room Type</strong></td>
                                         <td class="text-center"><strong>Room Price</strong></td>
                                         <td class="text-center"><strong>Arrival</strong></td>
                                         <td class="text-right"><strong>Departure</strong></td>
@@ -75,12 +86,14 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-center">{{transInfo.room_name}}</td>
+                                        <td class="text-center">{{transInfo.room_type}}</td>
                                         <td class="text-center">{{transInfo.price}} {{transInfo.currency}}</td>
                                         <td class="text-center">{{transInfo.arrival_date}}</td>
                                         <td class="text-right">{{transInfo.departure_date}}</td>
                                     </tr>
 
                                     <tr>
+                                        <td class="highrow"></td>
                                         <td class="highrow"></td>
                                         <td class="highrow"></td>
                                         <td class="highrow text-center"><strong>Is Approved</strong></td>

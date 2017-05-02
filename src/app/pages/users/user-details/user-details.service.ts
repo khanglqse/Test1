@@ -16,11 +16,23 @@ export class UserDetailService extends CommonService {
 
     public getDetails(id): Promise<any> {
         return this.http.get(this.url + "?id=" + id)
-            .toPromise();
+            .toPromise()
+            .then(this.extractData)
+            .catch(this.handleError);
     }
 
     public getTrans(id): Promise<any> {
-        return this.http.get(this.URLs.user.trans + "?id="+id)
-        .toPromise();
+        return this.http.get(this.URLs.user.trans + "?id=" + id)
+            .toPromise()
+            .then(this.extractData)
+            .catch(this.handleError);
+    }
+
+    public getHouseData(): Promise<any> {
+
+        return this.http.get(this.URLs.user.userHouses)
+            .toPromise()
+            .then(this.extractData)
+            .catch(this.handleError);
     }
 }

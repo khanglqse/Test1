@@ -1,0 +1,28 @@
+[{
+        "id": 1,
+        "host_id": 1,
+        "name": "Lê Văn Tám",
+        "nation": "Việt Nam",
+        "house_type": "Country house",
+        "address": "123 abc street, Distric 1, HCM, VN",
+        "visited_count": 200
+    },
+    {
+        "id": 2,
+        "host_id": 1,
+        "name": "Lê Văn Tám",
+        "nation": "Việt Nam",
+        "house_type": "Country house",
+        "address": "123 abc street, Distric 1, HCM, VN",
+        "visited_count": 200
+    },
+    {
+        "id": 3,
+        "host_id": 1,
+        "name": "Lê Văn Tám",
+        "nation": "Việt Nam",
+        "house_type": "Country house",
+        "address": "123 abc street, Distric 1, HCM, VN",
+        "visited_count": 200
+    }
+]

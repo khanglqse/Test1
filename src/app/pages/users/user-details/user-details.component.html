@@ -7,7 +7,7 @@
             <div class="col-md-3">
                 <div class="text-center">
                     <img src="assets/img/100.png" class="avatar img-circle" alt="avatar">
-                    <h6>{{userInfo.LastName}} {{userInfo.MiddleName}} {{userInfo.FirstName}}</h6>
+                    <h6>{{userInfo.fullname}}</h6>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Gender:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{userInfo.Gender}}</span>
+                                    <span class="form-control">{{userInfo.gender}}</span>
                                 </div>
                             </div>
 
@@ -37,35 +37,35 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Birthday:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{userInfo.Birthday}}</span>
+                                    <span class="form-control">{{userInfo.dob}}</span>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Phone:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{userInfo.Phone}}</span>
+                                    <span class="form-control">{{userInfo.phone}}</span>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Address:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{userInfo.Address}}</span>
+                                    <span class="form-control">{{userInfo.address}}</span>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Email:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{userInfo.Email}}</span>
+                                    <span class="form-control">{{userInfo.email}}</span>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-lg-3 control-label">Status:</label>
                                 <div class="col-lg-8">
-                                    <span class="form-control">{{ (userInfo.IsDeleted) ? "Blocked" : "Activated"}}</span>
+                                    <span class="form-control">{{ (userInfo.is_banned) ? "Blocked" : "Activated"}}</span>
                                 </div>
                             </div>
 
@@ -81,6 +81,28 @@
                         <trans [tranList]="tranList"></trans>
                     </tab>
 
+                    <tab heading="House">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="black-muted-bg">
+                                    <th class="align-right">Title</th>
+                                    <th class="align-right">Country</th>
+                                    <th class="align-right">House Type</th>
+                                    <th class="align-right">Address</th>
+                                    <th class="align-right">Visited</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of houseInfo" (click)="viewDetails(item.id)" style="cursor: pointer;">
+                                    <td class="align-right">{{item.id}}</td>
+                                    <td class="align-right">{{item.host_id}}</td>
+                                    <td class="align-right">{{item.house_type}}</td>
+                                    <td class="align-right">{{item.address}}</td>
+                                    <td class="align-right">{{item.visited_count}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </tab>
                 </tabset>
 
 
