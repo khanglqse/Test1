@@ -7,7 +7,7 @@ export class Config {
     protected URLs = {
         "houses": {
             "search": "http://localhost:3000/app/api/houses.json",
-            "get": "app/api/house-details.json"
+            "get": "http://localhost:3000/app/api/house-details.json"
         },
         "login": {
             "process": "http://localhost:3000/app/api/login.json"

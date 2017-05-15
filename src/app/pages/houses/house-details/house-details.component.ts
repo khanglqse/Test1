@@ -1,15 +1,20 @@
 import { Component, ElementRef } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import 'leaflet-map';
 //import 'style-loader!./house-details.scss';
 
 import { Http } from '@angular/http';
+import { HouseDetailsService } from './house-details.service';
 
+// for sweetalert2
+declare var swal: any;
 
 @Component({
     selector: 'house-details',
     styleUrls: ['house-details.css'],
-    templateUrl: 'house-details.component.html'
+    templateUrl: 'house-details.component.html',
+    providers: [HouseDetailsService]
 })
 
 export class HouseDetailsComponent {
@@ -17,13 +22,16 @@ export class HouseDetailsComponent {
     public houseInfo = {};
 
     constructor(private http: Http,
-        private _elementRef: ElementRef) {
+    protected service: HouseDetailsService,
+        private _elementRef: ElementRef,
+        protected activeRoute: ActivatedRoute) {
 
-        this.http.get("app/api/house-details.json").toPromise()
+        let id = this.activeRoute.snapshot.params['houseId'];
+
+        this.service.getDetails(id)
             .then((ret) => {
-                this.houseInfo = ret.json();
+                this.houseInfo = ret;
             });
-
     }
 
 
@@ -41,4 +49,15 @@ export class HouseDetailsComponent {
             .openPopup();
     }
 
+    public setApprove(id) {
+        this.service.setApprove(id).then( ()=> {
+            swal(
+                'Set Approve!',
+                'you take a approve action!',
+                'success'
+            );
+        });
+    }
+
+    
 }

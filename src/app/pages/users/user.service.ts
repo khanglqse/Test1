@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+    
 
 import { CommonService } from '../common.service';
 
@@ -26,6 +28,7 @@ export class UserService extends CommonService {
 
     public setBan(id) {
         this.http.delete(this.URLs.user.ban + "?id=" + id);
+        
     }
-
+z
 }

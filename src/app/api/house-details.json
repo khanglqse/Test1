@@ -11,5 +11,6 @@
     "total_room": 4,
     "rate": 5,
     "lat": 10.8528673,
-    "long": 106.6237422
+    "long": 106.6237422,
+    "isApprove": true
 }
